@@ -1,0 +1,15 @@
+.warpper{
+    display:flex;
+    align-items:flex-start;
+    transition:all .3s;
+  }
+  .window{
+    width:300px;
+      overflow:hidden;
+  }
+  .pink{
+    color:pink;
+  }
+  .allBotton > span{
+    cursor: pointer;
+  }
