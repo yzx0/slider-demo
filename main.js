@@ -1,50 +1,28 @@
+let $imgs = $('#menu img')
+let $lis = $('#menu ul li')
+let current = 0
 
-let allBotton = $("#allBotton > span ")
 
-for(let i=0;i<allBotton.length;i++){
-  $(allBotton[i]).on('click',(x) => {
-    let index = $(x.currentTarget).index()
-    let px = index * -300
-    $('#warpper').css({
-      transform:'translateX('+px+'px)'
-    })
-    
-    n = index 
-    activeBotton(allBotton.eq(n))
-  })
-}
-
-let n = 0
-let size = $('#warpper > img').length
-
-playSlide(n % size)
-
-var timerId = setTimer()
-
-$('#window').on('mouseenter',() => {
-  window.clearInterval(timerId)
+$lis.eq(0).on('click',()=>{
+  current = 0
+  goToSlider(current)
 })
-
-$('#window').on('mouseleave',() => {
-  timerId = setTimer()
+$lis.eq(1).on('click',()=>{
+  current = 1
+  goToSlider(current)
 })
+$lis.eq(2).on('click',()=>{
+  current = 2
+  goToSlider(current)
+})
+$lis.eq(3).on('click',()=>{
+  current = 3
+  goToSlider(current)
+})
+ 
 
-
-function setTimer(){
-return setInterval(() => {
-  n += 1
-  playSlide(n % size)
-},3000)
-  
-}
-
-function activeBotton($botton){
-  $botton
-  .addClass('pink')
-  .siblings('.pink').removeClass('pink')
-}
-
-
-function playSlide(index){
-  allBotton.eq(index).trigger('click')
+function goToSlider(current){
+  $('#imgWrapper').css({transform:`translateX(${-(current * 920)}px)`})
+  $lis.eq(current).addClass('active')
+  .siblings().removeClass('active')
 }

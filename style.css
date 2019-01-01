@@ -1,41 +1,48 @@
-*{margin: 0;padding: 0;box-sizing: border-box;}
-ul,li{list-style: none;}
-clearfix::after{
-  content: '';
-  display: block;
-  clear: both;
-}
-
-.window{
-  height: 445px;
+*{margin: 0;padding: 0;box-sizing: border-box}
+.container{
   width: 920px;
-  overflow: hidden;
-  text-align: center;
-  white-space: nowrap;
+  height: 445px;
   margin: 20px auto;
+  border: 1px solid white;
   border-radius: 3px;
-  box-shadow: 0px 0px 3px 0px rgba(87,87,87,1);
-  position: relative;
+  background:url(./images/panel.jpg) repeat-x bottom center #ffffff;
+  box-shadow: 0px 0px 3px 0px rgba(51,51,51,1);
 }
-.window>img{margin: -1px 1px;}
-.imgWrapper{
-  display: flex;
-}
-.btnWrapper{
-  position: absolute;
-  bottom: 0;
-  left: 0;
+.sliderWindow{
   width: 100%;
-  margin: 2px auto;
-}
-.btnWrapper>img{
-  margin: 3px;
-}
-.btnBackground{
-  position: absolute;
-  bottom: -3px;
-  left: 0;
-  width: 100%;
+  overflow: hidden;
   margin: 0 auto;
 }
+.imgWrapper{
+  width: 100%;
+  display: flex;
+  transition: all 0.5s;
+}
+.menu > ul{
+  height: 45px;
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.menu > ul > li{
+  height: 45px;
+  width: 60px;
+  padding-top: 10px;
+  text-align: center;
+  margin-bottom: 2px;
+  cursor: pointer;
+}
+.menu > ul > li:hover{
+  background-color: #f3f3f3;
+}
+.menu > ul > li.active{
+  background: url(./images/active_bg.png);
+}
 
+.menu > ul > .fbar{
+  width: 1px;
+  height: 44px;
+  margin-bottom: 2px;
+  background: url(./images/divider.png) no-repeat;
+}
