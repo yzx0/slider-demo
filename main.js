@@ -2,6 +2,13 @@ let $imgs = $('#menu img')
 let $lis = $('#menu ul li')
 let current = 0
 
+setInterval(() => {
+  goToSlider(current)
+  current +=1
+  if(current > 3){
+    current = 0
+  }
+}, 2000);
 
 $lis.eq(0).on('click',()=>{
   current = 0
